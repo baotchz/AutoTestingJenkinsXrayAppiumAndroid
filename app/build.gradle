@@ -16,6 +16,11 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    packagingOptions {
+        exclude 'META-INF/INDEX.LIST'
+        exclude 'META-INF/io.netty.versions.properties'
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -40,17 +45,19 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.6.0'
 
     implementation files('libs/java-client-8.4.0.jar')
-    implementation files('libs/selenium-api-4.8.2.jar')
-    implementation files('libs/selenium-remote-driver-4.8.2.jar')
-    implementation files('libs/selenium-http-4.8.2.jar')
-    implementation files('libs/guava-31.1-jre.jar')
-    implementation files('libs/selenium-manager-4.8.2.jar')
+//    implementation files('libs/selenium-api-4.8.2.jar')
+//    implementation files('libs/selenium-remote-driver-4.8.2.jar')
+//    implementation files('libs/selenium-http-4.8.2.jar')
+//    implementation files('libs/guava-31.1-jre.jar')
+//    implementation files('libs/selenium-manager-4.8.2.jar')
+
+    testImplementation 'io.rest-assured:rest-assured-all:4.0.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-    implementation 'io.appium:java-client:8.4.0'
+//    implementation 'io.appium:java-client:8.4.0'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
 
     implementation 'org.seleniumhq.selenium:selenium-support:4.8.2'
